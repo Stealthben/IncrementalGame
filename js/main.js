@@ -13,20 +13,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const growRootsBtn = document.getElementById('grow-roots-btn');
     const rootLevelDisplay = document.getElementById('root-level');
     const hideUpgradesCheckbox = document.getElementById('hide-upgrades-checkbox');
-    
+    const upgradesBox = document.getElementById('upgrades');  // Upgrades section
+
     // Event listeners for actions
     absorbBtn.addEventListener('click', function() {
         handleAbsorbClick(waterCount, growRootsBtn, rootCost);
+
+        // Show the Upgrades box when water reaches 5
+        if (water >= 5 && upgradesBox.style.visibility === 'hidden') {
+            upgradesBox.style.visibility = 'visible';  // Unlock upgrades
+        }
     });
 
+    // Sprout button event (also reveals the Grow box)
     sproutBtn.addEventListener('click', function() {
         handleSprout(sproutBtn, growBox);
     });
 
+    // Grow Roots button event
     growRootsBtn.addEventListener('click', function() {
         handleGrowRootsClick(rootLevelDisplay, growRootsBtn, waterCount);
     });
 
+    // Hide completed upgrades
     toggleHideCompletedUpgrades(sproutBtn, hideUpgradesCheckbox);
 
     // Initial state update (sets up the UI on page load)
