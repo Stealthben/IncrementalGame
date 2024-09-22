@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incremental Game - Seed to Sprout</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="top-container">
+        <div id="inventory" class="box">
+            <h2>Inventory</h2>
+            <p id="water-count">Water: 0</p>
+        </div>
+        <div id="actions" class="box">
+            <h2>Actions</h2>
+            <button id="absorb-btn">Absorb</button>
+        </div>
+        <div id="upgrades" class="box">
+            <h2>Upgrades</h2>
+            <button id="sprout-btn" class="disabled">Sprout (Requires 5 Water)</button>
+            <div class="hide-completed">
+                <label><input type="checkbox" id="hide-upgrades-checkbox"> Hide completed upgrades</label>
+            </div>
+            <button id="stem-btn" class="hidden disabled">Stem (Locked)</button>
+        </div>
+    </div>
+
+    <div id="grow-box" class="grow-box">
+        <h2>Grow</h2>
+        <button id="grow-roots-btn" class="disabled">Grow Roots (Cost: 10 Water)</button>
+        <p id="root-level">Roots Level: 0</p>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+
+</body>
+</html>
