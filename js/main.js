@@ -13,24 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const growRootsBtn = document.getElementById('grow-roots-btn');
     const rootLevelDisplay = document.getElementById('root-level');
     const hideUpgradesCheckbox = document.getElementById('hide-upgrades-checkbox');
-    const upgradesBox = document.getElementById('upgrades');  // Upgrades section
+    const upgradesBox = document.getElementById('upgrades');  // Select the upgrades box
 
-    // Event listeners for actions
+    // Event listener for Absorb button
     absorbBtn.addEventListener('click', function() {
         handleAbsorbClick(waterCount, growRootsBtn, rootCost);
 
-        // Show the Upgrades box when water reaches 5
+        // Show the Upgrades box only when water reaches 5
         if (water >= 5 && upgradesBox.style.visibility === 'hidden') {
             upgradesBox.style.visibility = 'visible';  // Unlock upgrades
         }
     });
 
-    // Sprout button event (also reveals the Grow box)
+    // Event listener for Sprout button (reveals Grow box)
     sproutBtn.addEventListener('click', function() {
         handleSprout(sproutBtn, growBox);
     });
 
-    // Grow Roots button event
+    // Event listener for Grow Roots button
     growRootsBtn.addEventListener('click', function() {
         handleGrowRootsClick(rootLevelDisplay, growRootsBtn, waterCount);
     });
