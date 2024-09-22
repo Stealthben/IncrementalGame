@@ -1,8 +1,11 @@
-// actions.js
+// Import necessary functions from inventory.js
 import { absorbWater, updateInventory, water } from './inventory.js';
 
 // Function to handle absorbing water
 export function handleAbsorbClick(waterCount, growRootsBtn, rootCost) {
-    absorbWater();  // Increments water
-    updateInventory(waterCount, growRootsBtn, rootCost);  // Update the display
+    // Call absorbWater to increment water
+    absorbWater();
+
+    // Call updateInventory to update the UI
+    updateInventory(waterCount, growRootsBtn, rootCost);
 }
