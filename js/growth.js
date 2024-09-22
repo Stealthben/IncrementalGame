@@ -6,9 +6,9 @@ export let rootsAbsorbRate = 0.1;
 
 export function handleGrowRootsClick(rootLevelDisplay, growRootsBtn, waterCount) {
     if (water >= rootCost) {
-        water -= rootCost;
+        water -= rootCost;  // Subtract water for root purchase
         rootLevel++;
-        rootCost = Math.floor(10 + rootLevel * 1.2); // Calculate next cost
+        rootCost = Math.floor(10 + rootLevel * 1.2);  // Calculate next root cost
         rootLevelDisplay.textContent = `Roots Level: ${rootLevel}`;
         growRootsBtn.textContent = `Grow Roots (Cost: ${rootCost} Water)`;
 
@@ -17,5 +17,7 @@ export function handleGrowRootsClick(rootLevelDisplay, growRootsBtn, waterCount)
             water += rootsAbsorbRate;
             updateInventory(waterCount, growRootsBtn, rootCost);
         }, 1000);
+
+        updateInventory(waterCount, growRootsBtn, rootCost);
     }
 }
